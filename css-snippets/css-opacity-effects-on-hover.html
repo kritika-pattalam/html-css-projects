@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>CSS code snippets</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <meta name="description" content="List of CSS opacity effects that can be performed on hover of an element">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+Tammudu+2&display=swap" rel="stylesheet">
+  <style type="text/css">
+    body {
+        font-family: 'Baloo Tammudu 2', cursive;
+        font-size: 16px;
+        line-height: 20px;
+    }
+    .notes {
+        display: none;
+    }
+    .element-div {
+      background: #dd1200;
+      width: 300px;
+      height: 150px;
+      text-align: center;
+      display: inline-flex;
+      align-items: center;
+      padding: 10px;
+      margin: 20px;
+    }
+    .element-div:hover {
+        cursor: pointer;
+    }
+    .element-div--effect-1:hover {
+      opacity: 0.5;
+    }
+
+    .element-div--effect-2 {
+        opacity: 0.5;
+        transition: 0.5s;
+    }
+    .element-div--effect-2:hover {
+      opacity: 1;
+    }
+
+    .element-div--effect-3 {
+        transition: 0.5s;
+        background: rgba(255, 0, 0, 0.3);
+    }
+    .element-div--effect-3:hover {
+        background: rgba(255, 0, 0, 1);
+    }
+    .element-div--effect-4 {
+        transition: 0.5s;
+        color: rgba(0, 0, 0, 0.3);
+    }
+    .element-div--effect-4:hover {
+        color: rgba(0, 0, 0, 1);
+    }
+  </style>
+</head>
+<body>
+    <div class="element-div element-div--effect-1">
+        When you hover on me div, opacity reduces for the entire div.
+    </div>
+    <div class="element-div element-div--effect-2">
+        Fade in effect, using smooth transition and opacity on the div element.
+    </div>
+    <div class="element-div element-div--effect-3">
+        Fade in effect, using transition and opacity on the background color. [But does not affect the child element]
+    </div>
+    <div class="element-div element-div--effect-4">
+        Fade in effect, using transition and opacity on the text color. [But does not affect the div element]
+    </div>
+
+
+    <div class="notes">
+        Opacity - it is the degree to which content behind an element is hidden
+- this will set the opacity to its content also . which means in this case 
+- On hover opacity will make the element opaque, opacity 0 (fully transparent) will make it disappear completely, 1 (fully opaque)will have no difference whatsoever
+- opacity can take a value from 0 (fully transparent) to 1 fully opaque or in percentage from 0 to 100%
+- opacity inherit will inherit the opacity of its parent
+- opacity initial can be used to reset to it default when the page initially loaded,.
+- opacity 1 is by default
+- the problem of using opacity directly on the element will cause the child elements/content inside that element also to be opaque. If you do not want the content inside it to have that effect but just the background color, then instead of applying the opacity to the element, you should apply it to the background color instead 
+- eg:
+- 
+transition: 0.5s;
+background: rgba(255, 0, 0, 0.3);
+
+ the same way if this needs to be applied only for the text then it can be applied to the color of the text
+eg: color:  rgba(255, 0, 0, 0.3);
+ and the transition will be shown on the text instead
+Transition
+- On hover the opacity 0.3 or 1 is instantaneous , the effect is gradual/smooth. if we want the effect on/offf of the color to be smooth this can be done using transition.
+
+    </div>
+</body>
+</html>
